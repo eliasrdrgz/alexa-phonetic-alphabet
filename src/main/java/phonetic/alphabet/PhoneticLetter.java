@@ -51,7 +51,7 @@ public class PhoneticLetter
         {'6', "Six"},
         {'7', "Seven"},
         {'8', "Eight"},
-        {'9', "Nine"} }).collect(Collectors.toMap(data -> (Character)data[0], data -> (String) data[1]));
+        {'9', "Nine"}).collect(Collectors.toMap(data -> (Character)data[0], data -> (String) data[1]));
         
     public static String fromChar(Character ch)
     {
