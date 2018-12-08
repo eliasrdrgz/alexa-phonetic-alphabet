@@ -20,7 +20,7 @@ public class LaunchRequestHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Bienvenido a \"Frases famosas de películas\". Me puedes pedir una frase famosa.";
+        String speechText = "Bienvenido a \"Alfabeto fonético\". Me puedes pedir que deletree fonéticamente una palabra.";
         return input.getResponseBuilder()
                 .withSimpleCard(PhoneticAlphabetStreamHandler.SKILL_TITLE, speechText)
                 .withSpeech(speechText)

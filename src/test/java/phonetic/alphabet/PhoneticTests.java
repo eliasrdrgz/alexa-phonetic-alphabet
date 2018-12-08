@@ -16,4 +16,10 @@ public class PhoneticTests
 
         Assert.assertEquals("Unexpected spelling", "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ", whenServiceSpells);
     }
+
+    @Test
+    public void testNullWord() throws Exception
+    {
+        PhoneticAlphabetService.spell(null);
+    }
 }
