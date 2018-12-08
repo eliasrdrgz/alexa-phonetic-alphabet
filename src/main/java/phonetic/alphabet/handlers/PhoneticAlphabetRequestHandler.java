@@ -53,7 +53,6 @@ public class PhoneticAlphabetRequestHandler implements RequestHandler {
         }
 
         return input.getResponseBuilder()
-                .withSimpleCard("Alfabeto fonético", speechText)
                 .withReprompt(repromptText)
                 .withSpeech(speechText)
                 .withSimpleCard(PhoneticAlphabetStreamHandler.SKILL_TITLE, speechText)
