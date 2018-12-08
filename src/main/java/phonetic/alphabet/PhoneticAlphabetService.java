@@ -14,7 +14,7 @@ public class PhoneticAlphabetService {
         Stream<Character> sch = inputWord.chars()
             .filter(i -> i!=' ' && i != '-' && i != '_' && i!= '/')
             .mapToObj(i -> (char)i);
-        sch.forEach(ch -> spellingString.append(PhoneticLetter.fromChar(ch)).append("<break time=\"0.5s\"/>"));
+        sch.forEach(ch -> spellingString.append(PhoneticLetter.fromChar(ch)).append(" <break time=\"0.5s\"/>"));
 
         return spellingString.toString();
     }

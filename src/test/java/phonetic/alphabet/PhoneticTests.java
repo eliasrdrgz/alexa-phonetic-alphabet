@@ -15,7 +15,7 @@ public class PhoneticTests
         String whenServiceSpells = PhoneticAlphabetService.spell(givenWord);
 
         Assert.assertEquals("Unexpected spelling", 
-            "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ".replaceAll("\\s+","<break time=\"0.5s\"/>"), 
+            "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ".replaceAll("\\s+"," <break time=\"0.5s\"/>"), 
             whenServiceSpells);
     }
 
@@ -35,7 +35,7 @@ public class PhoneticTests
         System.out.println(whenServiceSpells);
 
         Assert.assertEquals("Unexpected spelling", 
-            "Zero One Two Three Four Five Six Seven Eight Nine ".replaceAll("\\s+","<break time=\"0.5s\"/>"), 
+            "Zero One Two Three Four Five Six Seven Eight Nine ".replaceAll("\\s+"," <break time=\"0.5s\"/>"), 
             whenServiceSpells);
     }
 }
