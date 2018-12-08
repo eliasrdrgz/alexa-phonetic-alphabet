@@ -13,7 +13,6 @@ public class PhoneticTests
     {
         String givenWord = "Alphabet";
         String whenServiceSpells = PhoneticAlphabetService.spell(givenWord);
-        
 
         Assert.assertEquals("Unexpected spelling", 
             "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ".replaceAll("\\s+"," <break time=\"0.5s\"/>"), 
@@ -24,5 +23,16 @@ public class PhoneticTests
     public void testNullWord() throws Exception
     {
         PhoneticAlphabetService.spell(null);
+    }
+
+    @Test
+    public void testOnlyNumbersWord() throws Exception
+    {
+        String givenWord = "0123456789";
+        String whenServiceSpells = PhoneticAlphabetService.spell(givenWord);
+        
+        Assert.assertEquals("Unexpected spelling", 
+            "Zero One Two Three Four Five Six Seven Eight Nine ".replaceAll("\\s+"," <break time=\"0.5s\"/>"), 
+            whenServiceSpells);
     }
 }
