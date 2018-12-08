@@ -11,8 +11,8 @@ import phonetic.alphabet.PhoneticAlphabetStreamHandler;
 import java.util.Optional;
 
 public class PhoneticAlphabetRequestHandler implements RequestHandler {
-    private static final String WORD_KEY = "WORD";
-    private static final String WORD_SLOT = "Word";
+    private static final String WORD_KEY = "WORD_TO_SPELL";
+    private static final String WORD_SLOT = "word2spell";
 
     @Override
     public boolean canHandle(HandlerInput input) {
