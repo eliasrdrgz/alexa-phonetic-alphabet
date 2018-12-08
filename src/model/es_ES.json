@@ -1,42 +1,57 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "alfabeto fonético",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": [
-            "cancel",
-            "cancela",
-            "para",
-            "stop"
+      "languageModel": {
+          "invocationName": "alfabeto fonético",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "PhoneticAlphabetIntent",
+                  "slots": [
+                      {
+                          "name": "word",
+                          "type": "ANY_WORD"
+                      }
+                  ],
+                  "samples": [
+                      "deletrea fonéticamente {word}",
+                      "deletréame fonéticamente {word}",
+                      "deletrea fonéticamente la palabra {word}",
+                      "convierte a alfabeto fonético la palabra {word}"
+                  ]
+              }
+          ],
+          "types": [
+              {
+                  "name": "ANY_WORD",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "palabra"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "134.fonetico"
+                          }
+                      }
+                  ]
+              }
           ]
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": [
-            "cancel",
-            "cancela",
-            "para",
-            "stop"
-          ]
-        },
-        {
-          "name": "eliasrdrgz.PhoneticAlphabetIntent",
-          "slots": [],
-          "samples": [
-            "deletrea fonéticamente {word2spell}",
-            "deletréame fonéticamente {word2spell}",
-            "deletrea fonéticamente la palabra {word2spell}",
-            "convierte a alfabeto fonético la palabra {word2spell}"
-          ]
-        }
-      ],
-      "types": []
-    }
+      }
   }
 }
