@@ -1,4 +1,4 @@
-package phonetic.alphabet.tests;
+package phonetic.alphabet;
 
 import org.junit.Assert;
 
