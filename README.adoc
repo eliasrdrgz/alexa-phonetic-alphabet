@@ -1,15 +1,18 @@
 = Alexa Skill - Phonetic alphabet
+:icons: font
 Elías Rodríguez Rivas
 
 == Usage
 
+IMPORTANT: Available only in Spanish (ES)
+
 . Launch Phonetic Alphabet
 +
-`Alexa, launch phonetic alphabet`
+`Alexa, lanza alfabeto fonético`
 
 . Phonetically spell a word or list of words
 +
-`spell phonetically this word`
+`deletrea fonéticamente 'hola'`
 
 == Expected behaviour
 
