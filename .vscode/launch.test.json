@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "alexa-phonetic-alphabet",
+                "projectName": "alexa-phonetic-alphabet",
+                "workingDirectory": "/home/elias/src/alexa-phonetic-alphabet",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "alexa-phonetic-alphabet",
+                "projectName": "alexa-phonetic-alphabet",
+                "workingDirectory": "/home/elias/src/alexa-phonetic-alphabet",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
