@@ -1,6 +1,25 @@
-= Phonetic alphabet
+= Alexa Skill - Phonetic alphabet
 Elías Rodríguez Rivas
+
+== Usage
+
+. Launch Phonetic Alphabet
++
+`Alexa, launch phonetic alphabet`
+
+. Phonetically spell a word or list of words
++
+`spell phonetically this word`
+
+== Expected behaviour
+
+* Support only for documented letter mapping in https://en.wikipedia.org/wiki/NATO_phonetic_alphabet[Wikipedia NATO phonetic alphabet entry]
+
+* Letters with accents still not supported (á, ñ, ç)
+
 
 == Aknowledgments
 
-Special thanks to Loli, my elder sister, who first teach me this idea.
+Special thanks to https://twitter.com/RdgzLola[Loli], my elder sister, who first teach me this idea.
+
+Thanks too to https://twitter.com/ilopmar[Iván López - @ilopmar] for his inspiring talk at Commit Conf 2018.
