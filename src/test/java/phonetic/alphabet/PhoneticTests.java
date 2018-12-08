@@ -13,8 +13,11 @@ public class PhoneticTests
     {
         String givenWord = "Alphabet";
         String whenServiceSpells = PhoneticAlphabetService.spell(givenWord);
+        
 
-        Assert.assertEquals("Unexpected spelling", "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ", whenServiceSpells);
+        Assert.assertEquals("Unexpected spelling", 
+            "Alpha Lima Papa Hotel Alpha Bravo Echo Tango ".replaceAll("\\s+"," <break time=\"0.5s\"/>"), 
+            whenServiceSpells);
     }
 
     @Test

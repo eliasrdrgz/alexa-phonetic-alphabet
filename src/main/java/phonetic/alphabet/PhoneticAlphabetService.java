@@ -12,7 +12,7 @@ public class PhoneticAlphabetService {
         }
         StringBuilder spellingString = new StringBuilder();
         Stream<Character> sch = inputWord.chars().mapToObj(i -> (char)i);
-        sch.forEach(ch -> spellingString.append(PhoneticLetter.fromChar(ch)).append(" "));
+        sch.forEach(ch -> spellingString.append(PhoneticLetter.fromChar(ch)).append(" <break time=\"0.5s\"/>"));
 
         return spellingString.toString();
     }

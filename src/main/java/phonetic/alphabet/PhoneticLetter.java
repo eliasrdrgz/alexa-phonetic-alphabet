@@ -41,7 +41,17 @@ public class PhoneticLetter
         {'W', "Whiskey"},
         {'X', "X-ray"},
         {'Y', "Yankee"},
-        {'Z', "Zulu"} }).collect(Collectors.toMap(data -> (Character)data[0], data -> (String) data[1]));
+        {'Z', "Zulu"} ,
+        {'0', "Zero"},
+        {'1', "One"},
+        {'2', "Two"},
+        {'3', "Three"},
+        {'4', "Four"},
+        {'5', "Five"},
+        {'6', "Six"},
+        {'7', "Seven"},
+        {'8', "Eight"},
+        {'9', "Nine"} }).collect(Collectors.toMap(data -> (Character)data[0], data -> (String) data[1]));
         
     public static String fromChar(Character ch)
     {
