@@ -36,8 +36,7 @@ public class PhoneticAlphabetRequestHandler implements RequestHandler {
         Slot wordSlot = slots.get(WORD_SLOT);
         String speechText, repromptText;
 
-        if (wordSlot != null && wordSlot.getResolutions() != null && 
-            wordSlot.getResolutions().toString().contains("ER_SUCCESS_MATCH"))
+        if (wordSlot != null)
         {
             String word = wordSlot.getValue();
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(WORD_KEY, word));
