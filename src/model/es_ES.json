@@ -28,9 +28,11 @@
                       }
                   ],
                   "samples": [
+                      "deletrea {word}",
                       "deletrea fonéticamente {word}",
                       "deletréame fonéticamente {word}",
                       "deletrea fonéticamente la palabra {word}",
+                      "converte {word}",
                       "convierte a alfabeto fonético la palabra {word}"
                   ]
               }

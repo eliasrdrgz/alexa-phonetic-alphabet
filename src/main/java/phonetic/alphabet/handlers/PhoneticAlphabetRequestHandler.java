@@ -7,6 +7,8 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Request;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
+import com.amazon.ask.model.SlotConfirmationStatus;
+import com.amazon.ask.model.slu.entityresolution.Resolutions;
 import com.amazon.ask.request.Predicates;
 
 import phonetic.alphabet.PhoneticAlphabetService;
@@ -28,6 +30,7 @@ public class PhoneticAlphabetRequestHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         Request request = input.getRequestEnvelope().getRequest();
+        System.out.println(request);
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
@@ -36,12 +39,24 @@ public class PhoneticAlphabetRequestHandler implements RequestHandler {
         Slot wordSlot = slots.get(WORD_SLOT);
         String speechText, repromptText;
 
-        if (wordSlot != null)
+        if (wordSlot != null && 
+            wordSlot.getResolutions() != null && 
+            wordSlot.getResolutions().toString().contains("ER_SUCCESS"))
         {
             String word = wordSlot.getValue();
             input.getAttributesManager().setSessionAttributes(Collections.singletonMap(WORD_KEY, word));
-            speechText = String.format("La palabra %s deletreada según el alfabeto fonético es %s",
-                word, PhoneticAlphabetService.spell(word));
+            if (PhoneticAlphabetService.specialCharacters(word))
+            {
+                speechText = String.format("La palabra %s tiene caracteres diacríticos. Haré mi mejor esfuerzo " + 
+                    "por deletrear fonéticamente la palabra, eliminando signos diacríticos, pero " +
+                    "cambiaré alguna de las letras, pudiendo cambiar el significado de la palabra. El deletreo fonético es %s",
+                    word, PhoneticAlphabetService.spell(word));   
+            }
+            else 
+            {
+                speechText = String.format("La palabra %s deletreada según el alfabeto fonético es %s",
+                    word, PhoneticAlphabetService.spell(word));
+            }
             repromptText = "Puedes preguntarme por palabras para que sean deletreadas según el alfabeto fonético";
         }
         else

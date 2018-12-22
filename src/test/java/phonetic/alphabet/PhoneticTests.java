@@ -34,11 +34,7 @@ public class PhoneticTests
     public void testAccentWord() throws Exception
     {
         String givenWord = "á";
-        String expectedResult = "La palabra á tiene caracteres diacríticos. " +
-        "Haré mi mejor esfuerzo por deletrear fonéticamente la palabra, "+
-        "eliminando signos diacríticos, pero cambiaré alguna de las letras, " +
-        "pudiendo cambiar el significado de la palabra. " +
-        "<break time=\"0.5s\"/>Alpha <break time=\"0.5s\"/>";
+        String expectedResult = "Alpha"+PhoneticAlphabetService.BREAK_TIME_0_5S;
         
         spellTest(givenWord, expectedResult);
     }

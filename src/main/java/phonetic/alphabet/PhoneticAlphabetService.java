@@ -10,6 +10,11 @@ public class PhoneticAlphabetService {
     
     public static final String BREAK_TIME_0_5S = " <break time=\"0.5s\"/>";
 
+    public static boolean specialCharacters(String inputWord)
+    {
+        return !Normalizer.isNormalized(inputWord, Normalizer.Form.NFKD);
+    }
+
     public static String spell(String inputWord)
     {
         System.out.println("> [" + inputWord + "]");
@@ -19,12 +24,8 @@ public class PhoneticAlphabetService {
             return "";
         }
         StringBuilder spellingString = new StringBuilder();
-        if (!Normalizer.isNormalized(inputWord, Normalizer.Form.NFKD))
+        if (specialCharacters(inputWord))
         {
-            spellingString.append("La palabra " + inputWord + " tiene caracteres diacríticos. Haré mi mejor esfuerzo " + 
-                "por deletrear fonéticamente la palabra, eliminando signos diacríticos, pero " +
-                "cambiaré alguna de las letras, pudiendo cambiar el significado de la palabra." + BREAK_TIME_0_5S);
-
             //inputWord = Normalizer.normalize(inputWord, Normalizer.Form.NFD);
             inputWord = StringUtils.stripAccents(inputWord);
             System.out.println(">> [" + inputWord.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "") + "]");
