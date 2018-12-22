@@ -57,7 +57,7 @@ public class PhoneticLetter
     {
         // TODO: better filtering of supported characters
         Character upperCase = Character.toUpperCase(ch);
-        if (!_Char2wordMap.containsKey(upperCase)) 
+        if (!_Char2wordMap.containsKey(upperCase))
         {
             System.out.println(String.format("Unsupported character %c", ch));
         }

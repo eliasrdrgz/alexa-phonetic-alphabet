@@ -29,6 +29,8 @@ repositories {
 
 dependencies {
     compile 'com.amazon.alexa:ask-sdk:2.9.2'
+    
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 
     compile 'log4j:log4j:1.2.17'
     compile 'org.slf4j:slf4j-api:1.7.10'
